@@ -284,7 +284,7 @@ class ContactSensor(SensorBase):
         self._contact_physx_view = self._physics_sim_view.create_rigid_contact_view(
             body_names_glob,
             filter_patterns=filter_prim_paths_glob,
-            max_contact_data_count=self.cfg.max_contact_data_count_per_prim * len(body_names) * self._num_envs,
+            max_contact_data_count=40000,
         )
         # resolve the true count of bodies
         self._num_bodies = self.body_physx_view.count // self._num_envs
